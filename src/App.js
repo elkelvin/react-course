@@ -24,11 +24,16 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  const addExpenseHandler = (expense) => {
+    console.log("App.js", expense);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <NewExpense />
+        <NewExpense onAddExpense={addExpenseHandler} />
         <Expenses items={expenses} />
         <a
           className="App-link"
